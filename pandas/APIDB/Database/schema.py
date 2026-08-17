@@ -1,8 +1,11 @@
-def individual_data(todo):
+def get_todo(todo):
     return{
         "id":str(todo["_id"]),
         "title":todo["title"],
         "description":todo["description"],
-        "status":todo["is_completed"]
-
+        "is_complete":todo["is_complete"],
     }
+
+
+def get_All_Todo(todos):
+    return[get_todo(todo) for todo in todos ]
