@@ -1,0 +1,12 @@
+
+from pymongo import MongoClient
+from pymongo.server_api import ServerApi
+
+uri = "mongodb+srv://hamzashakeel_db_user:<db_password>@cluster0.kpci5gc.mongodb.net/?appName=Cluster0"
+
+# Create a new client and connect to the server
+client = MongoClient(uri, server_api=ServerApi('1'))
+
+# Send a ping to confirm a successful connection
+db=client.todo_db
+collection=db["todo_data"]

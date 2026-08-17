@@ -3,5 +3,10 @@
         "title": "File 1",
         "context": "This is File number one with testing one",
         "id": 1
+    },
+    {
+        "title": "File 2",
+        "context": "This is File number 2 with testing 2",
+        "id": 2
     }
 ]

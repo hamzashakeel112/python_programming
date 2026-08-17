@@ -2,6 +2,18 @@ from fastapi import FastAPI, HTTPException, status
 from pydantic import BaseModel 
 from typing import List,Optional
 
+from pymongo import MongoClient
+
+
+
+uri = "mongodb+srv://hamzashakeel_db_user:<db_password>@cluster0.kpci5gc.mongodb.net/?appName=Cluster0"
+
+client = MongoClient(uri)
+db = client.test
+
+# Test connection
+print(client.list_database_names())
+
 
 app=FastAPI(title="JSON Data API")
 
