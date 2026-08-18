@@ -84,7 +84,7 @@ sector_tools=data_frame.groupby("Series_title_4")[["Data_value","Magnitude"]].su
 # print(data_frame.tail(10))
 
 # counting not null value in using isna().sum()
-print(data_frame["Series_title_5"].isna().sum())
+# print(data_frame["Series_title_5"].isna().sum())
 # print(data_frame["STATUS"].isna().sum())
 # with using loc we can replace any value at any row(row must be defined)
 
@@ -113,5 +113,60 @@ print(data_frame["Series_title_5"].isna().sum())
 # print(filtered_data)
 
 filter=(data_frame["Series_title_4"]=="Households") & (data_frame["Series_title_5"]=="National private control")
-filtered_data=data_frame[filter]
-print(filtered_data)
+# filtered_data=data_frame[filter]
+# print(filtered_data)
+
+# how to drop the duplicate row 
+# drop_duplicate()
+print(len(data_frame.drop_duplicates())-len(data_frame.count()))
+print(len(data_frame.drop_duplicates().count()))
+print(len(data_frame))
+
+
+
+# aggrigate in pandas 
+# .maen() .sum() .count()
+# filterdata=data_frame["Series_title_4"]=="Households"
+# print(filterdata.count())
+
+
+
+
+df1 = pd.DataFrame(
+    {
+        "Sector": [
+            "Central government institutions",
+            "Corporate business enterprises",
+            "Privare bussiness institute"
+        ],
+        "Total_Date_Value": [133462.0,562320.0,200209.0]
+    }
+)
+# print(df1)
+df2=pd.DataFrame(
+    {
+        "Sector":["Central government institutions","Corporate business enterprises",],
+        "Economic_Group":["Public Sector","Private Sector"],
+        "Risk_Rating":["Very Low", "Medium"]
+
+    }
+)
+
+# df_merge=pd.merge(df1,df2,left_on="Sector",right_on="Sector", how="inner")
+# print(df_merge)
+
+# df_merge=pd.merge(df1,df2.left_on,right_on,how)
+# df_merge=pd.merge(1st dict , 2nd dict, left_on,right_on.how=)
+
+data_frame=data_frame.dropna()
+data_frame=data_frame.drop_duplicates()
+# data_frame=data_frame[data_frame["Series_title_4"]=="House"]
+# i=0
+# while(i<len(data_frame)):
+#     if data_frame["Series_title_4"]=="Households":
+#         data_frame["Series_title_4"]="HOUSEHOLDS"
+#     i+=1
+
+
+data_frame["Series_title_5"]=data_frame["Series_title_5"].replace("All control","ALL CONTROL")
+print(data_frame)
