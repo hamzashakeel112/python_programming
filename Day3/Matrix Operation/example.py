@@ -26,3 +26,8 @@ m2=matrix('9 7 5 ; 6 4 2; 1 2 4')
 
 # multiply by row with col the 1 col and 1 row ans come 
 print(m1*m2)
+# Transpose
+m1.T
+print(m1.T)
+
+print(m1@m2)
